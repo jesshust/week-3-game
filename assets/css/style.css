@@ -1,5 +1,5 @@
 body {
-	background: url(../images/movingcastle.jpg);
+	background: url(../images/turniphead3.png);
 	font-size: 20px;
 	font-family: 'Poppins', sans-serif; 
 	color: #fff;
@@ -17,11 +17,11 @@ body {
 	width: 100px;
 	max-width: 960px; 
 	margin: 0 auto;
-	clear: both;
+	position: left;
 }
 
 
 #header {
-	background: #000;
+	
 
 }
