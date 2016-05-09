@@ -18,10 +18,28 @@ body {
 	max-width: 960px; 
 	margin: 0 auto;
 	position: left;
+	font-family: 'Poppins', sans-serif;
 }
 
+h1, 
+h2, 
+#stats {
+	 
+}
 
 #header {
 	
+	font-size: 18px;
+	font-family: 'Poppins', sans-serif;
+}
 
+#main {
+	float: left;
+	font-family: 'Poppins', sans-serif;
+}
+footer{
+	clear: both; 
+	position: static;
+	width: 100%; 
+	
 }
