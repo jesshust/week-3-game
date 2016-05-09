@@ -1,0 +1,27 @@
+body {
+	background: url(../images/movingcastle.jpg);
+	font-size: 20px;
+	font-family: 'Poppins', sans-serif; 
+	color: #fff;
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container{
+	width: 100px;
+	max-width: 960px; 
+	margin: 0 auto;
+	clear: both;
+}
+
+
+#header {
+	background: #000;
+
+}

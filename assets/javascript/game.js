@@ -3,6 +3,7 @@
 
 //array of words
 	var words = ["TOTORO", "HOWL", "PONYO", "KIKI", "CHIHIRO", "MONONOKE", "CATBUS", "SOPHIE"];
+	var images =[]
 	var word =""; 
 	var guesses = ""; 
 	var word = words[Math.floor(Math.random()*words.length)]; 
@@ -11,6 +12,7 @@
 	"<h2>Wins: " + wins + "</h2>" + "<h2>Guesses Remaining: " + guessesremaining + "<h2>Letters Guessed: " + guesses + "</h2>"; 
 	
 	document.querySelector('#hangman').innerHTML = html; 
+	document.getElementById('changingimage').src="assets/images/rsz_totoro.jpg"
 
 document.onkeyup = function(event){
 	var guess = String.fromCharCode(event.keyCode).toUpperCase(); 
