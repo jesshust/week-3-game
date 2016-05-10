@@ -13,33 +13,56 @@ body {
 	box-sizing: border-box;
 }
 
+html, body {
+	height: 100%; 
+}
+
+
+
 .container{
 	width: 100px;
 	max-width: 960px; 
-	margin: 0 auto;
 	position: left;
 	font-family: 'Poppins', sans-serif;
+	min-height: 100%; 
+	margin-bottom: -142px; 
 }
 
+
 h1, 
-h2, 
-#stats {
+h2 {
+		font-family: 'Poppins', sans-serif;
 	 
 }
 
 #header {
-	
+	position: fixed; 
+	margin: 0px 0px 50px 70px; 
 	font-size: 18px;
 	font-family: 'Poppins', sans-serif;
 }
 
 #main {
+	padding-top: 150px;
+}
+
+.main-section {
+	background: #fbbbb9;
+	margin: 100px 40px 20px 140px; 
 	float: left;
-	font-family: 'Poppins', sans-serif;
-}
-footer{
-	clear: both; 
-	position: static;
-	width: 100%; 
+	width: 475px;
+	height: 450px;
 	
+
 }
+
+#changingimage {
+	margin-top: 10px; 
+	margin-left: 120px; 
+}
+
+#hangman {
+	text-align: center; 
+}
+
+

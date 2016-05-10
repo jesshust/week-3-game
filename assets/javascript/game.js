@@ -1,18 +1,45 @@
 	var wins = 0; 
-	var guessesremaining = 15; 
+	var guessesremaining; 
 
 //array of words
 	var words = ["TOTORO", "HOWL", "PONYO", "KIKI", "CHIHIRO", "MONONOKE", "CATBUS", "SOPHIE"];
-	var images =[]
-	var word =""; 
-	var guesses = ""; 
-	var word = words[Math.floor(Math.random()*words.length)]; 
- 	
- 	var html = 
-	"<h2>WINS: " + wins + "</h2>" + "<h2>GUESSES REMAINING: " + guessesremaining + "<h2>LETTERS GUESSED: " + guesses + "</h2>"; 
-	
-	document.querySelector('#hangman').innerHTML = html; 
-	document.getElementById('changingimage').src="assets/images/rsz_kiki.jpg"
+	var images =["assets/images/rsz_totoro.jpg", "assets/images/rsz_howl.jpg", "assets/images/rsz_ponyo.jpg", "assets/images/rsz_kiki.jpg", "assets/images/rsz_chihiro.jpg", "assets/images/rsz_princessmononoke.jpg", "assets/images/rsz_catbus.jpg", "assets/images/rsz_sophie.jpg"]
+	var index; 
+	var word; 
+	var guesses; 
+	var word;
+	var image; 
+	var revealedword;  
+
+	resetgame(); 
+	function resetgame (){ 
+
+		index = Math.floor(Math.random()*words.length); 
+		word = words[index];
+		image = images[index];
+		guessesremaining = 15; 
+		guesses = ""; 
+
+		buildrevealword(); 
+
+		var html = 
+		"<h2>WINS: " + wins + "</h2>" + "<h2>GUESSES REMAINING: " + guessesremaining + "<h2>WORD: " + revealedword + "</h2>" + "<h2>LETTERS GUESSED: " + guesses + "</h2>"; 
+		
+		document.querySelector('#hangman').innerHTML = html; 
+		document.getElementById('changingimage').src=image; 
+	}
+
+	function buildrevealword (){ 
+		revealedword = ""; //word string 
+		for (var i = 0; i <word.length; i++){
+
+			if (guesses.includes(word[i])) {
+				revealedword= revealedword + word[i]; //show the word
+			} else{
+				revealedword = revealedword + "-" //show the dash
+			}
+		}
+	}
 
 document.onkeyup = function(event){
 	var guess = String.fromCharCode(event.keyCode).toUpperCase(); 
@@ -26,30 +53,14 @@ document.onkeyup = function(event){
 			console.log(guessesremaining);  
 			
 		}
-		var s = ""; //word string 
-		for (var i = 0; i <word.length; i++){
-
-			if (guesses.includes(word[i])) {
-				s = s + word[i]; //show the word
-			} else{
-				s = s + "-" //show the dash
-			}
-		}	
-		console.log(s); //show guesses/letters selected
-		if (s==word) { //if the guesses are equal to the word
+		buildrevealword (); 
+		if (revealedword==word) { //if the guesses are equal to the word
 			wins++; //tally the wins
-			var playagain = confirm("You Won! Play Again?");
-				//start over 
-			if (playagain){
-				word = words[Math.floor(Math.random()*words.length)]; 
-				guessesremaining = 15; 
-				guesses = ""; 
-
-			}
+			resetgame(); 
 		}
 	}
 	var html = 
-			"<h2>Wins: " + wins + "</h2>" + "<h2>Guesses Remaining: " + guessesremaining + "<h2>Letters Guessed: " + guesses + "</h2>"; 
-	document.querySelector('#hangman').innerHTML = html; 
-
-}
+		"<h2>WINS: " + wins + "</h2>" + "<h2>GUESSES REMAINING: " + guessesremaining + "<h2>WORD: " + revealedword + "</h2>" + "<h2>LETTERS GUESSED: " + guesses + "</h2>"; 
+		
+		document.querySelector('#hangman').innerHTML = html;  
+	}
