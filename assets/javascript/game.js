@@ -2,8 +2,13 @@
 	var guessesremaining; 
 
 //array of words //global scope
-	var words = ["TOTORO", "HOWL", "PONYO", "KIKI", "CHIHIRO", "MONONOKE", "CATBUS", "SOPHIE"];
-	var images =["assets/images/rsz_totoro.jpg", "assets/images/rsz_howl.jpg", "assets/images/rsz_ponyo.jpg", "assets/images/rsz_kiki.jpg", "assets/images/rsz_chihiro.jpg", "assets/images/rsz_princessmononoke.jpg", "assets/images/rsz_catbus.jpg", "assets/images/rsz_sophie.jpg"]
+	var words = ["TOTORO", "HOWL", "PONYO", "KIKI", "CHIHIRO", "MONONOKE", "CATBUS", "SOPHIE", "CALCIFER", "JIJI", "NOFACE", "ASHITAKA", "HAKU", 
+	"MEI", "TOMBO", "SOSUKE"];
+	var images =["assets/images/rsz_totoro.jpg", "assets/images/rsz_howl.jpg", "assets/images/rsz_ponyo.jpg",
+	 "assets/images/rsz_kiki.jpg", "assets/images/rsz_chihiro.jpg", "assets/images/rsz_princessmononoke.jpg", 
+	 "assets/images/rsz_catbus.jpg", "assets/images/rsz_sophie.jpg", "assets/images/rsz_calcifer.jpg", "assets/images/jiji.jpg",
+	 "assets/images/rsz_noface.jpg", "assets/images/rsz_ashitaka.jpg", "assets/images/rsz_mei.jpg", "assets/images/rsz_tombo.jpg", 
+	 "assets/images/rsz_sosuke.jpg"]
 	var index; 
 	var word; 
 	var guesses; 
