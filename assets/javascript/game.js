@@ -1,7 +1,7 @@
 	var wins = 0; 
 	var guessesremaining; 
 
-//array of words
+//array of words //global scope
 	var words = ["TOTORO", "HOWL", "PONYO", "KIKI", "CHIHIRO", "MONONOKE", "CATBUS", "SOPHIE"];
 	var images =["assets/images/rsz_totoro.jpg", "assets/images/rsz_howl.jpg", "assets/images/rsz_ponyo.jpg", "assets/images/rsz_kiki.jpg", "assets/images/rsz_chihiro.jpg", "assets/images/rsz_princessmononoke.jpg", "assets/images/rsz_catbus.jpg", "assets/images/rsz_sophie.jpg"]
 	var index; 
@@ -11,8 +11,9 @@
 	var image; 
 	var revealedword;  
 
+//not a global scope
 	resetgame(); 
-	function resetgame (){ 
+	function resetgame (){ //curly braces are a scope change 
 
 		index = Math.floor(Math.random()*words.length); 
 		word = words[index];
@@ -22,6 +23,7 @@
 
 		buildrevealword(); 
 
+//local scope to this function 
 		var html = 
 		"<h2>WINS: " + wins + "</h2>" + "<h2>GUESSES REMAINING: " + guessesremaining + "<h2>WORD: " + revealedword + "</h2>" + "<h2>LETTERS GUESSED: " + guesses + "</h2>"; 
 		
@@ -31,7 +33,7 @@
 
 	function buildrevealword (){ 
 		revealedword = ""; //word string 
-		for (var i = 0; i <word.length; i++){
+		for (var i = 0; i <word.length; i++){ //i only exists in this loop
 
 			if (guesses.includes(word[i])) {
 				revealedword= revealedword + word[i]; //show the word
@@ -56,7 +58,7 @@ document.onkeyup = function(event){
 		buildrevealword (); 
 		if (revealedword==word) { //if the guesses are equal to the word
 			wins++; //tally the wins
-			resetgame(); 
+			resetgame(); //calls the resetgame function
 		}
 	}
 	var html = 
